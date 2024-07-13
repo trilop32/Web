@@ -87,8 +87,7 @@
             использовать это значение. Когда мы сохраняем значение, мы обращаемся к переменной "на
             запись", а когда смотрим какое в ней значение, то обращаемся на чтение. В процессе
             компиляции имена переменных преобразуются в адреса памяти.<br>
-            Для именования переменных используются идентификаторы (identifiers) составленные по
-            определенным правилам. <b>Идентификатор(identifier) – это имя</b>.
+            Для именования переменных используются идентификаторы (identifiers) составленные по определенным правилам. <b>Идентификатор(identifier) – это имя</b>.
         </p>
         <h3 style="color:cornflowerblue">Правила именнования переменных:</h3>
         <ul>
@@ -122,15 +121,15 @@
         </p>
         <h1>Константы</h1>
         <p>
-            <i>Константа</i> – это именованная область памяти, содержимое которой НЕ может изменяться в
-            процессе выполнения программы. Для того, чтобы из переменной сделать константу, перед
-            ее объявлением нужно написать ключевое слово <r style="color:blue">const</r>.<br>
-            </p>
+            <i>Константа</i> – это именованная область памяти, содержимое которой НЕ может изменяться в процессе выполнения программы.
+            Для того, чтобы из переменной сделать константу, перед ее объявлением нужно написать ключевое слово <r style="color:blue">const</r>.<br>
+        </p>
         <p>
             int speed = 0; <span style="margin-left:108px;color:green">//Скорость (переменное значение)</span><br>
             const int MAX_SPEED = 250; <span style="color:green">//Максимальная скорость (постоянное значение)</span><br>
-        </p>    
-        <p>Константы принято называть заглавными буквами, для того чтобы после объявления было
+        </p>
+        <p>
+            Константы принято называть заглавными буквами, для того чтобы после объявления было
             понятно, что это константа.
         </p>
         <p>
@@ -140,7 +139,7 @@
         <p>
             <i>Символьная константа</i> – это один единственный символ, заключенный в одинарные кавычки
             (<span style="color:crimson">' '</span>), например <span style="color:crimson">'+'</span> или <span style="color:crimson">'A'</span>. Символьные константы – это константы типа <span style="color:blue">char</span>. Это легко проверить следующим образом:
-</p>
+        </p>
         <p>
             cout <span style="color:cadetblue"><< </span> <span style="color:crimson">'+'</span> <span style="color:cadetblue"><<</span> endl;<br>
             cout <span style="color: cadetblue"><< </span> <span style="color:blue">sizeof</span>(<span style="color:blue">char</span>) <span style="color:cadetblue"><<</span> endl;<br>
@@ -180,6 +179,294 @@
             cout <span style="color:cadetblue"><< </span> 123ll <span style="color:cadetblue"><< </span> endl; <r style="color:green; margin-left:50px">//Числовая константа типа long long</r><br>
             cout <span style="color:cadetblue"><< </span> 123ull <span style="color:cadetblue"><< </span> endl; <r style="color:green; margin-left:41px">//Числовая константа типа unsigned long long</r><br>
             Числовые, символьные и строковые константы еще называют <i>литералами</i>.
+        </p>
+        <h1>Операторы С++</h1>
+        <p>
+            Программа на языке C++ состоит из выражений, каждое из которых заканчивается символом <span style="color:red">';'</span>.
+        </p>
+        <p>
+            <i>Выражение</i> (<i>Expression</i>) – это синтаксическая конструкция, состоящая из операндов и операторов.
+        </p>
+        <p>
+            <i>Операнды</i> – это объекты (элементы выражения), над которыми выполняется какое-то действие.
+            В качестве операндов в выражениях обычно выступают переменные и константы.
+        </p>
+        <p>
+            <i>Операторы</i> – это объекты (элементы выражения), которые показывают, какое действие нужно выполнить над операндами.
+            Операторы обозначаются одним или двумя специальными символами.
+        </p>
+        <img src="gg.png">
+        <p>
+            Операторы бывают: унарные, бинарные и тернарные. Унарные операторы выполняют
+            действие над одним операндом, бинарные могут работать только с двумя операндами, а
+            тернарные только с тремя операндами. Например -3 здесь оператор <r style="color:crimson">'-'</r> является унарным, он
+            просто показывает что число 3 меньше нуля. В выражении 8 – 3 оператор минус – бинарный,
+            он показывает из какого числа (8) вычесть другое число (3). 5*3 – выражение имеет смысл –
+            одно число умножается на другое. *3 – выражение не имеет смысла, то есть, оператор *
+            только бинарный – может работать только с двумя операндами (числами).
+        </p>
+        <p>
+            Все операторы языка C++ можно разделить на категории:
+        </p>
+        <ul>
+            <li>
+                <i>Арифметические операторы</i> (<i>Arithmetical operators</i>):<br>
+                Unary: + –;<br>
+                Binary: + – * / %;<br>
+                % — остаток от деления. Об этом операторе нужно знать две особенности:
+            </li>
+            <li style="margin-left: 67px">
+                Если делимое меньше делителя, то оно полностью выпадает в остаток<br>
+                <r style="margin-left:26px; color:blue">int</r> a = 25;<br>
+                <r style="margin-left:28px;color:blue">int</r> b = 7;<br>
+                <r style="margin-left:26px">cout <r style="color:cadetblue"><<</r> b % a <r style="color:cadetblue"><<</r> endl;</r>
+            </li>
+            <li style="margin-left: 67px">
+                Операция % — "Остаток от деления" НЕ применима к вещественным типам данных<br>
+                <r style="margin-left:26px;color:blue">int</r> a = 25;<br>
+                <r style="margin-left:28px;color:blue">float</r> b = 7; <r style="color:green">//Ошибка на этапе компиляции<br></r>
+                <r style="margin-left:26px">cout << b % a << endl;</r>
+            </li>
+            <li>
+                <p>
+                    <i>Оператор присваивания</i> (<i>Assignment operator</i> =). Переменной слева, присваивает
+                    значение выражения справа. <i>Присвоить</i> значит <i>записать</i> (<i>сохранить</i>) в память.
+                    Переменную слева еще называют l-value, а выражение справа r-value.<br>
+                    <r style="margin-left:198px">l-value = r-value;<br></r>
+                    Например:<br>
+                    <r style="margin-left:221px">a = b + c;<br></r>
+                    здесь, в переменную 'a', которая слева от оператора = записывается (сохраняется)
+                    значение выражения 'b+c', которое находится справа от оператора "присвоить".
+                    В простейшем случае, выражение справа состоит из одной переменной или константы, например:<br>
+                </p>
+                <p>
+                    <r style="color:blue">int</r> a = 25;<r style="color:green">//Присвоить переменной 'a' значение 25.</r> 25 - это числовая константа типа int.<br>
+                    int b = a;<r style="color:green">//Переменной 'b' присвоить значение переменной 'a'.</r><br>
+                    int c = (a + b) * 2;<r style="color:green"> //Переменной 'с' присвоить значение выражения (a + b) * 2,</r><br>
+                    <r style="margin-left:120px;color:green">//или, в переменную 'c' записать (сохранить) значение выражения</r><br>
+                    <r style="margin-left:120px;color:green">//(a + b) * 2,что одно и то же,</r><br>
+                    <r style="margin-left:120px;color:green">//потому что ПРИСВОИТЬ - это ЗАПИСАТЬ!!!</r>
+            </li>
+            <li>
+                Increment/Decrement (++/--).
+                <i>Increment</i> – это унарный оператор, который увеличивает значение переменной на единицу.
+                <r style="color:blue">int</r> i=2; i++; //после инкремента переменная i будет содержать значение 3<br>
+                int i = 2;<br>
+                cout <r style="color:cadetblue"><<</r> i <r style="color:cadetblue"><<</r> endl;<br>
+                i++; <r style="margin-left:16px;color:green">//Increment<br></r>
+                cout <r style="color:cadetblue"><<</r> i <r style="color:cadetblue"><<</r> endl;<r style="color:green">//После инкремента переменная i увеличилась на 1, то есть,<br></r>
+                <r style="margin-left:116px;color:green">//теперь она содержит 3.<br></r>
+                <i>Decrement</i> – это унарный оператор, который уменьшает значение переменной на 1.<br>
+                <r style="color:blue">int</r> j = 5;<br>
+                cout <r style="color:cadetblue"><<</r> j <r style="color:cadetblue"><<</r> endl;<br>
+                j--; <r style="margin-left:22px;color:green">//Decrement<br></r>
+                cout <r style="color:cadetblue"><<</r> j <r style="color:cadetblue"><<</r> endl;<br>
+                <p>
+                    У инкремента и декремента есть две формы записи – префиксная и постфиксная. В
+                    префиксной форме записи оператор пишется перед операндом, а в постфиксной –
+                    после операнда:<br>
+                    <r style="color:blue">int i = 0;<br></r>
+                    ++i; <r style="margin-left:16px;color:green">//Profix increment<br></r>
+                    i++; <r style="margin-left: 16px; color: green">//Postfix (Suffix) increment<br></r>
+                    --i; <r style="margin-left: 22px; color: green">//Prefix decrement<br></r>
+                    i--; <r style="margin-left: 22px; color: green">//Postfix decrement<br></r>
+                    Префиксная и постфиксная формы записи инкремента и декремента отличаются
+                    приоритетом <r style="text-decoration:underline">по сравнению с другими операторами</r>. У префиксной формы записи
+                    приоритет выше <r style="text-decoration:underline">чем у других операторов</r>, а у постфиксной – ниже, чем у других операторов.
+                    a = b+c*d; //У оператора * самый высокий приоритет в этом выражении, он выполнится первым.
+                    У оператора = самый низкий приоритет в этом выражении, и он выполнится последним.<br>
+                    Можно сказать, что у префиксных инкремента и декремента САМЫЙ ВЫСОКИЙ
+                    ПРИОРИТЕТ, а у постфиксных САМЫЙ низкий ПРИОРИТЕТ, то есть они
+                    выполняются в последнюю очередь в любом выражении.
+                </p>
+            </li>
+            <li>
+                <i>Составные присваивания</i> (<i>Compaund Assignments</i>). Использутся, когда переменную
+                нужно увеличить не на 1, а на другое значение, или в несколько раз.
+                Сложные присваивания представляют собой комбинации, из арифметических операторов (+–*/%), и оператора присваивания (=). Например:<br>
+                <r style="color:blue">int</r> i = 2;<br>
+                i += 3; <r style="margin-left:45px;color:green">//Увеличивает переменную 'i' на 3. //+= ПРИБАВИТЬ.</r><br>
+                cout <r style="color:cadetblue"><<</r> i <r style="color:cadetblue"><<</r> endl;<br>
+                i -= 2; <r style="margin-left:48px;color:green">//Уменьшить переменную 'i' на 2. //-= ОТНЯТЬ<br></r>
+                cout <r style="color:cadetblue"><<</r> i <r style="color:cadetblue"><<</r> endl;<br>
+                i *= 4; <r style="margin-left:46px;color:green">//Увеличить переменную 'i' В 4 раза.<br></r>
+                cout <r style="color:cadetblue"><<</r> i <r style="color:cadetblue"><<</r> endl;<br>
+                i /= 3; <r style="margin-left:49px;color:green">//Уменьшить переменную 'i' в 3 раза.<br></r>
+                cout <r style="color:cadetblue"><<</r> i <r style="color:cadetblue"><<</r> endl;<br>
+            </li>
+            <li>
+                <i>Операторы сравнения</i> (<i>Comparison operators</i>). <i>Compare – Сравнить</i>.<br>
+                <img src="gg2.png" style="margin-left:168px"><br>
+                Операторы сравнения предназначены для написания условий. <i>Условие</i> (<i>Condition</i>) –
+                это сравнение. Все операторы сравнения возвращают <r style="color:blue">true</r> либо <r style="color:blue">false</r>, то есть значение
+                типа <r style="color:blue">bool</r>. Если условие состоит из одной операции сравнения, то его называют
+                <i>простым. Простые условия</i> можно объединять в <i>сложные</i>, при помощи <i>логических операторов.</i>
+            </li>
+            <li>
+                <i>Логические операторы</i> (<i>Logical operators</i>).<br>
+                ! – NOT;<br>
+                || - OR;<br>
+                && – AND;<br>
+                NOT (!) – это унарный оператор, который отрицает условие.<br>
+                Например: !<r style="color:blue">true</r> == <r style="color:blue">false</r>;<r style="color:green">//НЕ правда - это ложь;</r><br>
+                cout <r style="color:cadetblue"><<</r> (!<r style="color:blue">true</r> == <r style="color:blue">false</r>) <r style="color:cadetblue"><<</r> endl;<br>
+                <p>
+                    OR – Результатом сложного условия будет true, если результат хотя бы одного
+                    простого условия – true. Логическое OR напоминает арифметическое сложение 1 и 0.<br>
+                    false || false || true = true;<br>
+                    0 + 0 + 1 = 1; //true<br>
+                    0 + 1 + 1 = 2; //true<br>
+                    0 + 0 + 0 = 0; //false<br>
+                    AND – Результатом сложного условия будет false, если результат хотя бы одного простого условия – false;
+                    Логическое AND напоминает арифметическое умножение 1 и 0.<br>
+                    1*1*1 = 1;//true<br>
+                    1*1*0 = 0;//false<br>
+                    0*1*1 = 0;//false<br>
+                </p>
+            </li>
+        </ul>
+        <h1>Управляющие структуры</h1>
+        Часто возникает необходимость сделать выбор того, какую часть программы нужно
+        выполнить, или многократно выполнить определенную часть программы. Для этого в любом
+        языке программирования есть управляющие структуры. Они делятся на <i>конструкции ветвления и циклы.</i>
+        <p>
+            Конструкции ветвления: <r style="color:blue">if</r>...<r style="color:blue">else</r>... и <r style="color:blue">switch</r>;
+        </p>
+        <p>
+            Циклы: <r style="color:blue">while</r>..., <r style="color:blue">do</r>...<r style="color:blue">while</r>, <r style="color:blue">for</r>;
+        </p>
+        <h3 style="color: cornflowerblue">Конструкцию ветвления if… else…</h3>
+        Выбирает один из двух вариантов кода, в зависимости от условия. У конструкции if следующий синтаксис:<br>
+        <ul>
+            <r style="color:blue">if</r> (Condition)
+            <br>
+            {
+            <br>
+            <ul>
+                ...
+                <br>
+                code1;
+                <br>
+                ...
+                <br>
+            </ul>
+            }
+            <br>
+            <r style="color:blue">else</r>
+            <br>
+            {
+            <br>
+            <ul>
+                ...
+                <br>
+                code2;
+                <br>
+                ...
+                <br>
+            </ul>
+            }
+            <br>
+        </ul>
+        <i>Condition</i> – это условие. <b>Условие – это сравнение</b>. Все операторы сравнения возвращают <r style="color:blue">true</r>
+        либо <r style="color:blue">false</r>, то есть значение типа <r style="color:blue">bool</r>.
+        <p>
+            Если условие вернуло true, то выполняется code1, в противном случае, выполняется code2.
+        </p>
+        <p>
+            else и code2 являются не обязательными, то есть, if можно написать так:
+            <ul>
+                <r style="color:blue">if</r> (Condition)
+                <br>
+                {
+                <br>
+                <ul>
+                    ...
+                    <br>
+                    code;
+                    <br>
+                    ...
+                    <br>
+                </ul>
+                }
+            </ul>
+        </p>
+        Если условие вернуло true, то code выполниться, если false, code будет проигнорирован.
+        <p>
+            Условие, состоящее из одной операции сравнения, называют простым. Несколько простых
+            условий можно объединить в сложное, при помощи логических операторов (&& – AND, || – OR).
+        </p>
+        <h3 style="color: cornflowerblue">Конструкция множественного выбора switch</h3>
+        В отличие от if… else…, который позволяет выбрать <b>один</b> из <b>двух</b> вариантов кода, в
+        зависимости от условия (Condition), switch позволяет выбрать <b>один</b> из <b>множества</b> вариантов
+        кода, в зависимости от значения некоторой переменной. У конструкции <r style="color:blue">switch</r> следующий синтаксис:
+        <ul>
+            <r style="color:blue">switch</r> (var)
+            <br>
+            {
+            <br>
+            <r style="color:blue">case</r> CONST_1: ...code1...;
+            <r style="color:blue">break</r>;
+            <br>
+            <r style="color:blue">case</r> CONST_2: ...code2...;
+            <r style="color:blue">break</r>;
+            <br>
+            .................................
+            <br>
+            .................................
+            <br>
+            <r style="color:blue">case</r> CONST_N: ...codeN...;
+            <r style="color:blue">break</r>;
+            <br>
+            <r style="color:blue">default</r>: Default Code;
+            <br>
+            }
+        </ul>
+        var – это переменная, по значению которой <r style="color:blue">switch</r> выбирает что нужно делать. Эту
+        переменную (var), <r style="color:blue">switch</r> последовательно сравнивает с константами CONST_1, CONST_2, ...
+        CONST_N, и если значения совпадают, то выполняется соответствующий код code1, code2, ...
+        codeN до ключевого слова <r style="color:blue">break</r>. Ключевое слово <r style="color:blue">break</r> прерывает выполнение кода, и выходит
+        за пределы конструкции <r style="color:blue">switch</r>. Если ключевое слово <r style="color:blue">break</r> отсутствует, то выполнится код,
+        соответствующий следующему <r style="color:blue">case</r>, и так далее, пока не встретиться <r style="color:blue">break</r> или не закончится
+        <r style="color:blue">switch</r>. Если значение переменной var не совпало ни с одной константой (CONST_1, CONST_2,
+        ..., CONST_N), то выполнится код, после метки <r style="color:blue">default</r>, если она есть. Переменная var и
+        константы CONST_1, CONST_2, ..., CONST_N могут быть только целочисленного (<r style="color:blue">short</r>, <r style="color:blue">long</r>,
+        <r style="color:blue">int</r>, <r style="color:blue">long long</r>) либо символьного (<r style="color:blue">char</r>) типа.
+        <p>
+            Слово <r style="color:blue">case</r> означает "случай". <r style="color:blue">case</r> –ы также часто называют вхождениями, или метками (label).
+        </p>
+        <h1>Циклы</h1>
+        <i>Цикл</i> – это управляющая структура, которая позволяет многократно выполнить
+        определенную часть кода (многократно повторить выполнение определенной части кода).        
+        <p>
+            <i>Цикл</i> – это управляющая структура, которая позволяет зациклить выполнение определенной части кода.
+        </p>
+        <p>
+            Циклы бывают:
+            <ul>
+                <li>
+                    с предусловием – while;
+                </li>
+                <li>
+                    с постусловием – do … while;
+                </li>
+                <li>
+                    цикл на заданное количество итераций – for.
+                </li>
+            </ul>
+        </p>
+            <p>    
+                <i>Итерация</i> – это однократное выполнение тела цикла.
+            </p>
+            <p>
+                <i>Тело цикла</i> – это код, который нужно зациклить.
+            </p>        
+        <img src="gg3.png"><br>
+        <p>
+            Основным отличием между <r style="color:blue">while</r> и <r style="color:blue">do</r>…<r style="color:blue">while</r> является то, что <r style="color:blue">do</r>…<r style="color:blue">while</r> выполниться хотя бы
+            один раз, не зависимо от условия.
+            </p>
+            <p>
+                <r style="color:blue">while</r> – сначала думает, потом делает, а <r style="color:blue">do</r>…<r style="color:blue">while</r> – сначала делает, а потом думает.
         </p>
     </body>
 </div>
