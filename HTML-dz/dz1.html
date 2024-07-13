@@ -12,6 +12,15 @@
         margin-left: 100px;
         margin-right: 100px;
     }
+
+    p {
+        font-family: 'Arial';
+        font-size: 15px;
+    }
+
+    .transparent-text {
+        color: rgba(0, 0, 0, 0.5);
+    }
 </style>
 <div class="element">
     <body>
@@ -19,23 +28,159 @@
         <h3 style="color:cornflowerblue">Целочисленные типы:</h3>
         <ul>
             <li>
-                <p>short.Переменная типа short занимает 2 Байта памяти, и принимает значения в диапазоне<br>
                 <p>
+                    short.Переменная типа short занимает 2 Байта памяти, и принимает значения в диапазоне<br>
                     unsigned short: 0…65 535; 0000 0000   0000 0000 .......... 1111 1111   1111 <br>
-                    0…2<sup>16</sup>–1;
-                </p>
-                short: –32 768 … 32 767;<br>
-                -2<sup>15</sup> … +2<sup>15</sup> –1;
+                    <span style="margin-left: 100px">0…2<sup>16</sup>–1;</span><br>
+                    <span style="margin-left: 23px">signed short: –32 768 … 32 767;<br></span>
+                    <span style="margin-left: 135px">-2<sup>15</sup> … +2<sup>15</sup> –1;</span>
                 </p>
             </li>
-            
+            <li>
+                <p>
+                    long – занимает 4 Байта памяти, и принимает значения в диапазоне<br>
+                    unsigned long: 0 … 4 294 967 295;<br>
+                    <span style="margin-left: 98px">0 … 2<sup>32</sup> -1;<br></span>
+                    <span style="margin-left: 18px">signed long: – 2 147 483 648 … 2 147 483 647;<br></span>
+                    <span style="margin-left: 102px">–2<sup>31</sup> … 2<sup>31</sup> –1;</span>
+                </p>
+            </li>
+            <li>
+                int (Integer – Целое число). Платформенно зависимый тип данных, его величина
+                зависит от процессора (CPU) операционной системы (ОС) и среды разработки (IDE –
+                Integrated Development Environment). В Visual Studio для Microsoft Windows тип
+                данных int заниамет 4 Байта, следовательно, его диапазоны принимаемых значений
+                полностью совпадают с long.
+            </li>
+            <li>
+                long long. Занимает 8 Байт памяти, и принимает значения в диапазоне<br>
+                unsigned long long int: 0 … 2<sup>64</sup> – 1;<br>
+                <span style="margin-left: 14px">signed long long int: –2<sup>63</sup> … 2<sup>63</sup>  – 1;
+            </li>
         </ul>
         <h2 style="color:cornflowerblue">Вещественные типы:</h2>
-        <p>Вещественные типы предназначены для хранения дробных чисел (чисел с плавающей запятой).
-        Вещественные типы есть только знаковые, они не могут быть unsigned. В языке C++ есть всего два вещественных типа: <b>float</b> и <b>double</b>. <b>float</b> – вещественный тип одинарной точности, занимает 4 Байта памяти. <b>double</b> – вещественный тип двойной точности, занимает 8 Байт памяти.
-        float и double могут хранить ОЧЕНЬ БОЛЬШИЕ и ОЧЕНЬ МАЛЕНЬКИЕ числа, но эти числа могут быть не совсем точными.</p>
+        <p>
+            Вещественные типы предназначены для хранения дробных чисел, (чисел с плавающей запятой).
+            Вещественные типы есть только знаковые, они не могут быть unsigned. В языке C++ есть всего два вещественных типа: <b>float</b> и <b>double</b>. <b>float</b> – вещественный тип одинарной точности, занимает 4 Байта памяти. <b>double</b> – вещественный тип двойной точности, занимает 8 Байт памяти.
+            float и double могут хранить ОЧЕНЬ БОЛЬШИЕ и ОЧЕНЬ МАЛЕНЬКИЕ числа, но эти числа могут быть не совсем точными.
+        </p>
         <p>Разделителем целой и дробной части у float и double является точка, а не запятая.</p>
-        <p>Объем занимаемой памяти переменной, константой или типом данных всегда можно определить оператором sizeof() следующим образом:</>
+        <p>
+            Объем занимаемой памяти переменной, константой или типом данных всегда можно определить оператором <r style="color:blue">sizeof</r>() следующим образом:<br>
+            <span style="margin-left: 60px">count <r style="color:cadetblue"><<</r> <r style="color:blue">sizeof</r>(<r style="color:blue">int</r>) <r style="color:cadetblue"><<</r> endl;</span><br>
+            или<br> <span style="margin-left: 60px"> count <r style="color:cadetblue"><<</r> <r style="color:blue">sizeof</r>(1024) <r style="color:cadetblue"><<</r> endl; //это константа типа int, она занимает 4 Байта</span><br>
+        </p>
+        <p>
+            Минимальное и максимальное значение для любого типа можно узнать при помощи
+            макроопределений Visual Studio. Например, INT_MIN возвращает минимальное значение,
+            которое можно записать в int, а INT_MAX – максимальное значение. У любой беззнаковой
+            переменной минимальное значение всегда 0, а максимальное, например для int-a можно
+            узнать при помощи UINT_MAX. U означает unsigned.<br>
+            Д.З.: при помощи оператора sizeof и макроопределений вывести на экран объем занимаемой
+            памяти для все числовых типов данных. Макроопределения можно найти в файлах "limits.h"
+            и "float.h", эти фалы можно открыть любым текстовым редактором.
+        </p>
+        <h1>Имя переменной</h1>
+        <p>
+            Имя переменной нужно для того, чтобы к ней можно было обращаться по этому имени. К
+            переменной обращаются для того, чтобы сохранить в ней какое-то значение, а потом
+            использовать это значение. Когда мы сохраняем значение, мы обращаемся к переменной "на
+            запись", а когда смотрим какое в ней значение, то обращаемся на чтение. В процессе
+            компиляции имена переменных преобразуются в адреса памяти.<br>
+            Для именования переменных используются идентификаторы (identifiers) составленные по
+            определенным правилам. <b>Идентификатор(identifier) – это имя</b>.
+        </p>
+        <h3 style="color:cornflowerblue">Правила именнования переменных:</h3>
+        <ul>
+            <li>
+                <p>
+                    Имя переменной (identifier) может состоять из символов латинского алфавита,
+                    строчных и ЗАГЛАВНЫХ, символов цифр 0123456789 и символа подчеркивания _;
+                    ABC....Zabc...z0123...9_
+                </p>
+            </li>
+            <li>
+                <p>
+                    Имя переменной (identifier) НЕ может начинаться символом цифры (<s class="transparent-text">1stPlace</s>, <span class="transparent-text">Place1</span>);
+                </p>
+            </li>
+            <li>
+                <p>
+                    Имена переменных <i>регистрозависимы</i>, то есть строчные и ЗАГЛАВНЫЕ символы
+                    различаются компилятором. Например <span class="transparent-text">double Price</span>; и <span class="transparent-text">double price</span>; это две разные переменные;
+                </p>
+            </li>
+            <li>
+                <p>
+                    Для именования переменных НЕЛЬЗЯ использовать ключевые слова языка C++ (<r style="color:blue">void</r>, <r style="color:blue">namespace</r>, <r style="color:blue">for</r>, <r style="color:blue">if</r>, <r style="color:blue">else</r>, <r style="color:blue">while</r> и т.д.);
+                </p>
+            </li>
+        </ul>
+        <p>
+            Имя переменной должно быть осмысленным, то есть, по имени переменной должно
+            становиться понятно, что в ней хранится!!! Например, переменная <span class="transparent-text">double Weight</span>; содержит вес чего-либо.
+        </p>
+        <h1>Константы</h1>
+        <p>
+            <i>Константа</i> – это именованная область памяти, содержимое которой НЕ может изменяться в
+            процессе выполнения программы. Для того, чтобы из переменной сделать константу, перед
+            ее объявлением нужно написать ключевое слово <r style="color:blue">const</r>.<br>
+            </p>
+        <p>
+            int speed = 0; <span style="margin-left:108px;color:green">//Скорость (переменное значение)</span><br>
+            const int MAX_SPEED = 250; <span style="color:green">//Максимальная скорость (постоянное значение)</span><br>
+        </p>    
+        <p>Константы принято называть заглавными буквами, для того чтобы после объявления было
+            понятно, что это константа.
+        </p>
+        <p>
+            Кроме именованных констант существуют так же символьные, строковые и числовые
+            константы.
+        </p>
+        <p>
+            <i>Символьная константа</i> – это один единственный символ, заключенный в одинарные кавычки
+            (<span style="color:crimson">' '</span>), например <span style="color:crimson">'+'</span> или <span style="color:crimson">'A'</span>. Символьные константы – это константы типа <span style="color:blue">char</span>. Это легко проверить следующим образом:
+</p>
+        <p>
+            cout <span style="color:cadetblue"><< </span> <span style="color:crimson">'+'</span> <span style="color:cadetblue"><<</span> endl;<br>
+            cout <span style="color: cadetblue"><< </span> <span style="color:blue">sizeof</span>(<span style="color:blue">char</span>) <span style="color:cadetblue"><<</span> endl;<br>
+            cout <span style="color: cadetblue"><< </span> <span style="color:blue">sizeof</span>(<span style="color:crimson">'+'</span>) <span style="color:cadetblue"><<</span> endl;<br>
+            cout <span style="color: cadetblue"><< </span> <span style="color:blue">typeid</span>(<span style="color:crimson">'+'</span>).name() <span style="color:cadetblue"><<</span> endl;<br>
+        </p>
+        <p>
+            <i>Строковая константа</i> – это сколько угодно, каких угодно символов, заключенных в
+            двойные кавычки <span style="color:crimson">""</span>, например – <span style="color:crimson">"Hello World"</span> или <span style="color:crimson">"+"</span>. Строковые константы заниамют на 1
+            байт больше, чем содержат символов, это связано с тем, что компилятор неявно добавляет
+            ASCII-символ с кодом 0 в конец строки. Это легко проверить следующим образом:
+        </p>
+        <p>
+            cout <span style="color:cadetblue"><< </span> <span style="color:crimson">"Строковые константы:\n"</span>;<br>
+            cout <span style="color:cadetblue"><< </span> <span style="color:crimson">"Hello World"</span> <span style="color:cadetblue"><<</span> endl;<br>
+            cout <span style="color:cadetblue"><< </span> <span style="color:blue">sizeof</span>(<span style="color:crimson">"Hello World"</span>) <span style="color:cadetblue"><<</span> endl;<br>
+            cout <span style="color:cadetblue"><< </span> <span style="color:crimson">"+"</span> <span style="color:cadetblue"><<</span> endl;<br>
+            cout <span style="color:cadetblue"><< </span> </span> <span style="color:blue">sizeof</span>(<span style="color:crimson">"+"</span>) <span style="color:cadetblue"><<</span> endl;<br>
+        </p>
+        <p>
+            <i>Числовая константа</i> – это просто число в исходном коде программы. Оно может быть
+            целым, или дробным, например:
+        </p>
+        <p>
+            cout <span style="color:cadetblue"><< </span> 1024 <span style="color:cadetblue"><< </span> endl; <r style="color:green">//Это числовая константа</r><br>
+            cout <span style="color:cadetblue"><< </span> <r style="color:blue">sizeof</r>(1024) <span style="color:cadetblue"><< </span> endl;<br>
+            cout <span style="color:cadetblue"><< </span> <r style="color:blue">typeid</r>(1024).name() <span style="color:cadetblue"><< </span> endl;
+        </p>
+        <p>
+            НО, у каждого значения (переменной, константы) в языке C++ есть тип. 1024 – это числовая
+            константа типа <r style="color:blue">int</r>. Есть числовые константы и других типов:
+        </p>
+        <p>
+            cout <span style="color:cadetblue"><< </span> 3.14 <span style="color:cadetblue"><< </span> endl; <r style="color:green; margin-left:53px">//Числовая константа типа double</r><br>
+            cout <span style="color:cadetblue"><< </span> 5. <span style="color:cadetblue"><< </span> endl; <r style="color:green; margin-left:70px">//Числовая константа типа double</r><br>
+            cout <span style="color:cadetblue"><< </span> 5.f <span style="color:cadetblue"><< </span> endl; <r style="color:green; margin-left:65px">//Числовая константа типа float</r><br>
+            cout <span style="color:cadetblue"><< </span> 123ll <span style="color:cadetblue"><< </span> endl; <r style="color:green; margin-left:50px">//Числовая константа типа long long</r><br>
+            cout <span style="color:cadetblue"><< </span> 123ull <span style="color:cadetblue"><< </span> endl; <r style="color:green; margin-left:41px">//Числовая константа типа unsigned long long</r><br>
+            Числовые, символьные и строковые константы еще называют <i>литералами</i>.
+        </p>
     </body>
 </div>
 </html>
