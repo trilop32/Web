@@ -6,6 +6,7 @@
     <meta name="description" content="Introduction to Web P_21">
     <title>Kristal</title>
     <link rel="icon" href="kristal.ico" type="image/x-icon">
+    
 </head>
 <style>
     .element {
@@ -13,7 +14,7 @@
         margin-right: 100px;
     }
 
-    p {
+    body {
         font-family: 'Arial';
         font-size: 15px;
     }
@@ -210,16 +211,20 @@
         </p>
         <ul>
             <li>
+                <p>
                 <i>Арифметические операторы</i> (<i>Arithmetical operators</i>):<br>
                 Unary: + –;<br>
                 Binary: + – * / %;<br>
                 % — остаток от деления. Об этом операторе нужно знать две особенности:
+                </p>
             </li>
             <li style="margin-left: 67px">
+                <p>
                 Если делимое меньше делителя, то оно полностью выпадает в остаток<br>
                 <r style="margin-left:26px; color:blue">int</r> a = 25;<br>
                 <r style="margin-left:28px;color:blue">int</r> b = 7;<br>
                 <r style="margin-left:26px">cout <r style="color:cadetblue"><<</r> b % a <r style="color:cadetblue"><<</r> endl;</r>
+                </p>
             </li>
             <li style="margin-left: 67px">
                 Операция % — "Остаток от деления" НЕ применима к вещественным типам данных<br>
@@ -421,6 +426,7 @@
             <br>
             }
         </ul>
+        <p>
         var – это переменная, по значению которой <r style="color:blue">switch</r> выбирает что нужно делать. Эту
         переменную (var), <r style="color:blue">switch</r> последовательно сравнивает с константами CONST_1, CONST_2, ...
         CONST_N, и если значения совпадают, то выполняется соответствующий код code1, code2, ...
@@ -431,12 +437,15 @@
         ..., CONST_N), то выполнится код, после метки <r style="color:blue">default</r>, если она есть. Переменная var и
         константы CONST_1, CONST_2, ..., CONST_N могут быть только целочисленного (<r style="color:blue">short</r>, <r style="color:blue">long</r>,
         <r style="color:blue">int</r>, <r style="color:blue">long long</r>) либо символьного (<r style="color:blue">char</r>) типа.
+        </p>
         <p>
             Слово <r style="color:blue">case</r> означает "случай". <r style="color:blue">case</r> –ы также часто называют вхождениями, или метками (label).
         </p>
         <h1>Циклы</h1>
+        <p>
         <i>Цикл</i> – это управляющая структура, которая позволяет многократно выполнить
         определенную часть кода (многократно повторить выполнение определенной части кода).        
+        </p>
         <p>
             <i>Цикл</i> – это управляющая структура, которая позволяет зациклить выполнение определенной части кода.
         </p>
