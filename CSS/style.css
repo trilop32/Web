@@ -1,0 +1,25 @@
+﻿body {
+    font-family: 'Roboto','Brush Script MT','Tahoma','Arial';
+    font-weight: 500;
+    font-size: 18px
+}
+
+h1 {
+    font-family: 'Playwrite CU'
+}
+
+h2 {
+    color: blue
+}
+
+p {
+    text-align: justify;
+}
+
+#intro {
+    color: blue
+}
+
+.gg {
+    font-weight: 700
+}
