@@ -2,7 +2,10 @@
 body {
     font-family: 'Roboto';
    /* font-weight: 500;*/
-    font-size: 18px
+    font-size: 18px;
+    background-color:black;
+    background-image:url(ghg.png);
+    background-attachment:fixed
 }
 
 h1 {
@@ -13,7 +16,11 @@ h1 {
 h2 {
     color: blue
 }
-
+p{
+    text-align:justify;
+    color:white;
+    background-color:rgba(0,0,0,1)
+}
 
 #intro {
     color: blue
@@ -39,4 +46,16 @@ h1 + h2 {
     /* + - дескрипторы строго следуют 1 за другим*/
     /* ~ - между дескрипторами могут встречатся другие дескрипторы*/
     color: darkblue
+}
+img {
+    /*align-content:center;*/
+    border: solid;
+    width: 30%;
+    height: 30%;
+    /*padding:initial*/
+    float: left; /*оптикание*/
+    margin: 0.5% 0.5% 0.5% 0.5%
+   /* margin-left:0.5%;
+    margin-right: 0.5%;
+    margin-bottom: 0.5%*/
 }
