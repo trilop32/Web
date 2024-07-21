@@ -1,26 +1,28 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
     font-family: 'Roboto';
-   /* font-weight: 500;*/
+    /* font-weight: 500;*/
     font-size: 18px;
-    background-color:black;
-    background-image:url(ghg.png);
-    background-attachment:fixed;
-    color:white
+    background-color: black;
+    background-image: url(ghg.png);
+    background-attachment: fixed;
+    color: white
 }
 
 h1 {
     font-family: 'Playwrite CU','Segoe Script','Arial',sans-serif;
-    color: darkred !important/*костыль(Ad-Hoc решение)*/
+    color: darkred !important /*костыль(Ad-Hoc решение)*/
 }
 
 h2 {
     color: lightseagreen
 }
-p{
-    text-align:justify;
-    color:white;
-    background-color:rgba(0,0,0,0.8)
+
+p {
+    text-align: justify;
+    color: white;
+    background-color: rgba(0,0,0,0.8)
 }
 
 #intro {
@@ -30,53 +32,79 @@ p{
 .gg {
     font-weight: 700
 }
-p > b{
+
+p > b {
     /*<b> непосредственнно вложен в <p>*/
-    color:forestgreen
+    color: forestgreen
 }
-p > i{
-    
-    text-decoration:underline
-}
-h1~h2{
+
+
+h1 ~ h2 {
     /* + - дескрипторы строго следуют 1 за другим*/
     /* ~ - между дескрипторами могут встречатся другие дескрипторы*/
-    color:crimson
+    color: crimson
 }
+
 h1 + h2 {
     /* + - дескрипторы строго следуют 1 за другим*/
     /* ~ - между дескрипторами могут встречатся другие дескрипторы*/
     color: white
 }
-h3{
-    color:tomato
+
+h3 {
+    color: tomato
 }
-img {
+.imgg {
     /*align-content:center;*/
     border: solid;
-    width: 30%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
     /*padding:initial*/
     float: left; /*оптикание*/
     margin: 0.5% 0.5% 0.5% 0.5%
-   /* margin-left:0.5%;
+    /* margin-left:0.5%;
     margin-right: 0.5%;
     margin-bottom: 0.5%*/
 }
-table{
-    border-collapse:collapse;
-    width:100%;
-    background-color:black;
-    color:white
+
+.img {
+    border: solid;
+    width: 30%;
+    height: 30%;
+    float: left; /*оптикание*/
+    margin: 0.5% 0.5% 0.5% 0.5%
 }
+
+.img2 {
+    border: solid;
+    width: 60%;
+    height: 60%;
+    margin: 0.5% 0.5% 0.5% 0.5%
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: black;
+    color: white
+}
+
 th {
     text-align: center;
     padding: 10px;
     border: 1px solid mediumpurple;
     background-color: rebeccapurple
 }
+
 td {
     text-align: center;
     padding: 10px;
     border: 1px solid mediumpurple;
+}
+li {
+    text-align: justify;
+    background-color: rgba(0,0,0,0.8)
+}
+.ull {
+    background-color: rgba(0,0,0,0.8)
 }
