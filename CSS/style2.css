@@ -9,7 +9,6 @@ body {
     background-attachment: fixed;
     color: white
 }
-
 h1 {
     font-family: 'Playwrite CU','Segoe Script','Arial',sans-serif;
     color: darkred !important /*костыль(Ad-Hoc решение)*/
