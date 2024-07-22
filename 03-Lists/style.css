@@ -1,0 +1,17 @@
+﻿body
+{
+    font-size:24px;
+    background-color:green;
+}
+ol{
+    list-style-type:armenian
+}
+ul{
+    list-style:disc;
+    color:crimson;
+    text-align:justify;
+    list-style-position:inside
+}
+.img{
+    list-style-image:url(img/moond.svg);
+}
