@@ -69,12 +69,18 @@ h3 {
 
 .img {
     border: solid;
-    width: 30%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
     float: left; /*оптикание*/
     margin: 0.5% 0.5% 0.5% 0.5%
 }
-
+.img3{
+    border: solid;
+    width: 20%;
+    height: 20%;
+    float: right; /*оптикание*/
+    margin: 0.5% 0.5% 0.5% 0.5%
+}
 .img2 {
     border: solid;
     width: 60%;
