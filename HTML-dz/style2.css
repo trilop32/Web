@@ -1,0 +1,23 @@
+﻿body
+{
+    background-color:mistyrose;
+    font-size:32px;
+    font-family:Impact;
+    margin-left:100px;
+    margin-right:100px
+}
+.sho {
+    list-style-image: url(img/sho.svg)
+}
+.shr {
+    list-style-image: url(img/shr.svg)
+}
+.galg {
+    list-style-image: url(img/galg.svg)
+}
+.galf{
+    list-style-image:url(img/galf.svg)
+}
+.crest {
+    list-style-image: url(img/crest.svg)
+}
