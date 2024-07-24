@@ -92,20 +92,28 @@ table {
     border-collapse: collapse;
     width: 100%;
     background-color: black;
-    color: white
+    color: white;
 }
-
+caption{
+    background-color:rebeccapurple;
+    font-style:italic
+}
 th {
     text-align: center;
     padding: 10px;
     border: 1px solid mediumpurple;
     background-color: rebeccapurple
 }
-
 td {
     text-align: center;
     padding: 10px;
     border: 1px solid mediumpurple;
+}
+.Present{
+    background-color:darkslategrey
+}
+.NA{
+    background-color:darkred
 }
 li {
     text-align: justify;
@@ -113,4 +121,8 @@ li {
 }
 .ull {
     background-color: rgba(0,0,0,0.8)
+}
+/*Сылки*/
+h4{
+    text-align:center
 }
