@@ -1,0 +1,20 @@
+﻿body{
+    text-align:center
+}
+/*.vvod, .voprosik1, .voprosik2, .voprosik3, .voprosik4, .voprosik5 {
+    display: none;
+}
+.active {
+    display: block;
+}
+.yds{
+    background-color:black;
+    color:white
+}*/
+.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}

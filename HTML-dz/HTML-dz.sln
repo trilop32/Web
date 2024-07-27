@@ -9,8 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 		dz2.html = dz2.html
 		dz4.html = dz4.html
 		dz5.html = dz5.html
+		dz6.html = dz6.html
 		style.css = style.css
 		style2.css = style2.css
+		style3.css = style3.css
 	EndProjectSection
 EndProject
 Global

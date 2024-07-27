@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Тест</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="vvod active">
+        <h1>Введите свои данные</h1>
+        <form action="#file.php" method="post">
+            <p>
+                <input size="25" maxlength="25" type="text" placeholder="Введите вашу Фамилию " id="fa"
+                       pattern="[a-zA-Zа-яА-ЯёЁ]+" required minlength="3">
+            </p>
+            <p>
+                <input size="25" maxlength="25" type="text" placeholder="Введите ваше Имя " id="name"
+                       pattern="[a-zA-Zа-яА-ЯёЁ]+" required minlength="3">
+            </p>
+            <p>
+                <input size="25" maxlength="25" type="text" placeholder="Введите ваше Отчество " id="otc"
+                       pattern="[a-zA-Zа-яА-ЯёЁ]+">
+            </p>
+            <p>
+                <select>
+                    <option disabled selected>Выбирите вашу группу</option>
+                    <option>Р_1</option>
+                    <option>Р_2</option>
+                    <option>Р_3</option>
+                    <option>Р_4</option>
+                    <option>Р_5</option>
+                    <option>Р_6</option>
+                    <option>Р_7</option>
+                    <option>Р_8</option>
+                    <option>Р_9</option>
+                    <option>Р_10</option>
+                    <option>Р_11</option>
+                    <option>Р_12</option>
+                    <option>Р_13</option>
+                    <option>Р_14</option>
+                    <option>Р_15</option>
+                    <option>Р_16</option>
+                    <option>Р_17</option>
+                    <option>Р_18</option>
+                    <option>Р_19</option>
+                    <option>Р_20</option>
+                    <option>Р_21</option>
+                    <option>Р_22</option>
+                    <option>Р_23</option>
+                    <option>Р_24</option>
+                    <option>Р_25</option>
+                    <option>Р_26</option>
+                    <option>Р_27</option>
+                    <option>Р_28</option>
+                    <option>Р_29</option>
+                    <option>Р_30</option>
+                </select>
+            </p>
+        </form>
+    </div>
+
+    <div class="voprosik1 ">
+        <h2>Вопрос 1:</h2>
+        <h3> Какой язык программирования наиболее подходит для разработки веб-приложений?</h3>
+
+        <label class="option">
+            <input type="radio" name="q1" value="python"> Python
+        </label>
+        <label class="option">
+            <input type="radio" name="q1" value="java"> Java
+        </label>
+        <label class="option">
+            <input type="radio" name="q1" value="c++"> C++
+        </label>
+        <label class="option">
+            <input type="radio" name="q1" value="javascript"> JavaScript
+        </label>
+        <label class="option">
+            <input type="radio" name="q1" value="ruby"> Ruby
+        </label>
+    </div>
+
+        <div class="voprosik2">
+            <h2>Вопрос 2</h2>
+            <p>Текст нижнего теста.</p>
+        </div>
+
+        <div class="voprosik3">
+            <h2>Вопрос 3</h2>
+            <p>Текст нижнего теста.</p>
+        </div>
+        <div class="voprosik4">
+            <h2>Вопрос 4</h2>
+            <p>Текст нижнего теста.</p>
+        </div>
+        <div class="voprosik5">
+            <h2>Вопрос 5</h2>
+            <p>Текст нижнего теста.</p>
+        </div>
+
+        <button type="submit" onclick="switchTests()" id="continueButton" disabled>Продолжить</button>
+
+        <script>
+            function switchTests() {
+                // Получить элементы
+                const Vvod = document.querySelector(".vvod");
+                const Voprosik1 = document.querySelector(".voprosik1");
+                const Voprosik2 = document.querySelector(".voprosik2");
+                const Voprosik3 = document.querySelector(".voprosik3");
+                const Voprosik4 = document.querySelector(".voprosik4");
+                const Voprosik5 = document.querySelector(".voprosik5");
+
+                Vvod.classList.remove("active");
+                Voprosik1.classList.add("active");
+            }
+            
+            const faInput = document.getElementById("fa");
+            const nameInput = document.getElementById("name");
+            const continueButton = document.getElementById("continueButton");
+
+            faInput.addEventListener("input", checkInputs);//будет вызываться всякий раз, когда вводится текст в это поле
+            nameInput.addEventListener("input", checkInputs);
+
+            function checkInputs() {
+                if (faInput.value.trim().length >= 3 && nameInput.value.trim().length >= 3) {
+                    continueButton.disabled = false;
+                } else {
+                    continueButton.disabled = true;
+                }
+            }
+        </script>
+</body>
+</html>
+
