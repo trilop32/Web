@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Тест</title>
+    <style>
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .answer {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Тест</h1>
+
+    <div class="question" id="question1">
+        <h2>Вопрос 1:</h2>
+        <p>Какой из этих цветов является основным?</p>
+        <div class="answer">
+            <input type="radio" name="q1" value="red"> Красный
+        </div>
+        <div class="answer">
+            <input type="radio" name="q1" value="green"> Зеленый
+        </div>
+        <div class="answer">
+            <input type="radio" name="q1" value="blue"> Синий
+        </div>
+        <div class="answer">
+            <input type="radio" name="q1" value="yellow"> Желтый
+        </div>
+    </div>
+
+    <button id="nextQuestion">Следующий вопрос</button>
+
+    <div class="question" id="question2" style="display: none;">
+        <h2>Вопрос 2:</h2>
+        <p>Какие из этих фруктов растут на дереве?</p>
+        <div class="answer">
+            <input type="checkbox" name="q2" value="apple"> Яблоко
+        </div>
+        <div class="answer">
+            <input type="checkbox" name="q2" value="strawberry"> Клубника
+        </div>
+        <div class="answer">
+            <input type="checkbox" name="q2" value="orange"> Апельсин
+        </div>
+        <div class="answer">
+            <input type="checkbox" name="q2" value="banana"> Банан
+        </div>
+    </div>
+
+    <button id="checkAnswers" style="display: none;">Проверить ответы</button>
+
+    <div id="results"></div>
+
+    <script>
+        const question1 = document.getElementById('question1');
+        const question2 = document.getElementById('question2');
+        const nextQuestionButton = document.getElementById('nextQuestion');
+        const checkAnswersButton = document.getElementById('checkAnswers');
+        const results = document.getElementById('results');
+
+        nextQuestionButton.addEventListener('click', () => {
+            question1.style.display = 'none';
+            question2.style.display = 'block';
+            nextQuestionButton.style.display = 'none';
+            checkAnswersButton.style.display = 'block';
+        });
+
+        checkAnswersButton.addEventListener('click', () => {
+            const q1Answer = document.querySelector('input[name="q1"]:checked');
+            const q2Answers = document.querySelectorAll('input[name="q2"]:checked');
+
+            let score = 0;
+
+            if (q1Answer && q1Answer.value == 'red') {
+                score+=1;
+            }
+
+            q2Answers.forEach(answer => {
+                if (answer.value == 'apple' || answer.value == 'orange') {
+                    score+=1;
+                }
+            });
+
+            results.innerHTML = `<h2>Результаты</h2><p>Правильных ответов: ${score} из 3</p>
+                    `;
+        });
+    </script>
+</body>
+</html>

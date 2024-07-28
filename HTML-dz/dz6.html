@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <title>Тест</title>
     <link rel="stylesheet" href="style3.css">
+    <link rel="icon" href="kristal.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="vvod active">
+    <div class="active" id="vvod">
         <h1>Введите свои данные</h1>
         <form action="#file.php" method="post">
             <p>
@@ -57,79 +58,204 @@
                     <option>Р_30</option>
                 </select>
             </p>
-        </form>
+        </form>        
+        <!--<button type="submit" onclick="switchTests(1, 1)" id="continueButton" disabled>Продолжить</button>-->
+        <button type="submit" id="question1" disabled>Продолжить</button>
     </div>
 
-    <div class="voprosik1 ">
+    <div class="hidden" id="vop1">
         <h2>Вопрос 1:</h2>
-        <h3> Какой язык программирования наиболее подходит для разработки веб-приложений?</h3>
-
-        <label class="option">
-            <input type="radio" name="q1" value="python"> Python
-        </label>
-        <label class="option">
-            <input type="radio" name="q1" value="java"> Java
-        </label>
-        <label class="option">
-            <input type="radio" name="q1" value="c++"> C++
-        </label>
-        <label class="option">
-            <input type="radio" name="q1" value="javascript"> JavaScript
-        </label>
-        <label class="option">
-            <input type="radio" name="q1" value="ruby"> Ruby
-        </label>
+        <h3> Какая из следующих технологий НЕ является языком программирования?</h3>
+        <input type="checkbox" name="q1" id="python"> <label for="python">Python</label><br>
+        <input type="checkbox" name="q1" id="java"> <label for="java">Java</label><br>
+        <input type="checkbox" name="q1" id="c++"> <label for="c++">C++</label><br>
+        <input type="checkbox" name="q1" id="javascript"> <label for="javascript">JavaScript</label><br>
+        <input type="checkbox" name="q1" id="ruby" value="HTML"> <label for="ruby">HTML</label><br><br>
+        <!--<button type="submit" onclick="switchTests(1, 2)" id="continueButton" disabled>Продолжить</button>-->
+        <button type="submit" id="question2" class="hidden">Продолжить</button>
     </div>
 
-        <div class="voprosik2">
-            <h2>Вопрос 2</h2>
-            <p>Текст нижнего теста.</p>
-        </div>
+    <div class="hidden" id="vop2">
+        <h2>Вопрос 2</h2>
+        <h3>Какой из следующих терминов относится к концепции преобразования исходного кода в машинный код?</h3>
+        <input type="checkbox" name="q2" id="kompilat" value="Компиляция"><label for="kompilat">Компиляция</label><br>
+        <input type="checkbox" name="q2" id="interpr"><label for="interpr">Интерпретация</label><br>
+        <input type="checkbox" name="q2" id="oba"><label for="oba">Оба варианта верны</label><br>
+        <input type="checkbox" name="q2" id="nioba"><label for="nioba">Ни один из вариантов не верен</label><br>         
+        <!--<button type="submit" onclick="switchTests(2, 3)" id="continueButton" disabled>Продолжить</button>-->
+        <button type="submit" id="question3" class="hidden">Продолжить</button>
+    </div>
 
-        <div class="voprosik3">
-            <h2>Вопрос 3</h2>
-            <p>Текст нижнего теста.</p>
-        </div>
-        <div class="voprosik4">
-            <h2>Вопрос 4</h2>
-            <p>Текст нижнего теста.</p>
-        </div>
-        <div class="voprosik5">
-            <h2>Вопрос 5</h2>
-            <p>Текст нижнего теста.</p>
-        </div>
+    <div class="hidden" id="vop3">
+        <h2>Вопрос 3</h2>
+        <h3> Какие из перечисленных технологий используются для разработки мобильных приложений?</h3>
+        <input type="checkbox" name="q3" id="reactnative" value="ReactNative"><label for="reactnative">React Native</label><br>
+        <input type="checkbox" name="q3" id="flutter" value="Flutter"><label for="flutter">Flutter</label><br>
+        <input type="checkbox" name="q3" id="xamarin" value="Xamarin"><label for="xamarin">Xamarin</label><br>
+        <input type="checkbox" name="q3" id="swift" value="Swift"><label for="swift">Swift</label><br>
+        <input type="checkbox" name="q3" id="kotlin" value="Kotlin"><label for="kotlin">Kotlin</label><br>
+        <input type="checkbox" name="q3" id="java2" value="Java2"><label for="java2">Java</label><br>
+        <button type="submit" id="question4" class="hidden">Продолжить</button>
+    </div>
 
-        <button type="submit" onclick="switchTests()" id="continueButton" disabled>Продолжить</button>
+    <div class="hidden" id="vop4">
+        <h2>Вопрос 4</h2>
+        <h3>Как вы думаете, какая из картинок, по мнения ИИ, выглядит как язык программирования Python? </h3>
+        <img class="img" src="vop4_1.jpg" onclick="selectImage(this)" data-answer="correct">
+        <img class="img" src="vop4_2.jpg" onclick="selectImage(this)" data-answer="incorrect">
+        <img class="img" src="vop4_3.jpg" onclick="selectImage(this)" data-answer="incorrect">
+        <button type="submit" id="resultss" class="hidden">Продолжить</button>
+    </div>
+    <div id="results"></div>
+    <script>
+        //переход
+        const Vvod = document.getElementById('vvod');
+        const Vop1 = document.getElementById('vop1');
+        const Vop2 = document.getElementById('vop2');
+        const Vop3 = document.getElementById('vop3');
+        const Vop4 = document.getElementById('vop4');
+        const Question1 = document.getElementById('question1');
+        const Question2 = document.getElementById('question2');
+        const Question3 = document.getElementById('question3');
+        const Question4 = document.getElementById('question4');
+        const resultss = document.getElementById('resultss');
+        const results = document.getElementById('results');
 
-        <script>
-            function switchTests() {
-                // Получить элементы
-                const Vvod = document.querySelector(".vvod");
-                const Voprosik1 = document.querySelector(".voprosik1");
-                const Voprosik2 = document.querySelector(".voprosik2");
-                const Voprosik3 = document.querySelector(".voprosik3");
-                const Voprosik4 = document.querySelector(".voprosik4");
-                const Voprosik5 = document.querySelector(".voprosik5");
+        Question1.addEventListener('click', () => {
+            Vvod.style.display = 'none';
+            Vop1.style.display = 'block';
+            Question1.style.display = 'none';
+            Question2.style.display = 'block';
+        });
+        Question2.addEventListener('click', () => {
+            Vop1.style.display = 'none';
+            Vop2.style.display = 'block';
+            Question2.style.display = 'none';
+            Question3.style.display = 'block';
+        });
+        Question3.addEventListener('click', () => {
+            Vop2.style.display = 'none';
+            Vop3.style.display = 'block';
+            Question3.style.display = 'none';
+            Question4.style.display = 'block';
+        });
+        Question4.addEventListener('click', () => {
+            Vop3.style.display = 'none';
+            Vop4.style.display = 'block';
+            Question4.style.display = 'none';
+            resultss.style.display = 'block';
+        });
+        resultss.addEventListener('click', () => {
+            Vop1.style.display = 'block';
+            Vop2.style.display = 'block';
+            Vop3.style.display = 'block';
+            Vop4.style.display = 'block';
+        });
+        //начало
+        const faInput = document.getElementById("fa");
+        const nameInput = document.getElementById("name");
+        const continueButton = document.getElementById("question1");
 
-                Vvod.classList.remove("active");
-                Voprosik1.classList.add("active");
+        faInput.addEventListener("input", checkInputs);//будет вызываться всякий раз, когда вводится текст в это поле
+        nameInput.addEventListener("input", checkInputs);
+
+        function checkInputs() {
+            if (faInput.value.trim().length >= 3 && nameInput.value.trim().length >= 3) {
+                question1.disabled = false;
             }
+            else {
+                question1.disabled = true;
+            }
+        }
+        //вопрос 4
+        function selectImage(img) {
+            // Удаляем класс "selected" у всех картинок
+            var images = document.querySelectorAll(".img");
+            images.forEach(function (image) {
+                image.classList.remove("selected");
+            });
+
+            img.classList.add("selected");
+        }
+        const answerImages = document.querySelectorAll(".img");
+        let ss = 0;
+        answerImages.forEach(image => {
+            let alreadyScored = false;
             
-            const faInput = document.getElementById("fa");
-            const nameInput = document.getElementById("name");
-            const continueButton = document.getElementById("continueButton");
-
-            faInput.addEventListener("input", checkInputs);//будет вызываться всякий раз, когда вводится текст в это поле
-            nameInput.addEventListener("input", checkInputs);
-
-            function checkInputs() {
-                if (faInput.value.trim().length >= 3 && nameInput.value.trim().length >= 3) {
-                    continueButton.disabled = false;
+            image.addEventListener('click', () => {
+                const isCorrect = image.dataset.answer === 'correct';
+                if (isCorrect && alreadyScored==false) {
+                    ss += 1;
+                    alreadyScored = true; 
                 } else {
-                    continueButton.disabled = true;
+                    ss = 0;
+                    alreadyScored = false;
                 }
+            });
+        });
+        
+        resultss.addEventListener('click', () => {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            let score = 0;
+            if (q1 && q1.value == 'HTML') {
+               score+=1;
             }
-        </script>
+            if (q2 && q2.value == 'Компиляция' ) {
+              score+=1;
+            }     
+            // Проверка
+            //let q3Correct = true;
+            //const correctAnswers = ['ReactNative', 'Flutter', 'Xamarin', 'Swift', 'Kotlin', 'Java2'];
+
+            //q3.forEach(answer => {
+            //    if (!correctAnswers.includes(answer.value)) {
+            //        q3Correct = false;
+            //    }
+            //});
+
+            //if (q3Correct == true) {
+            //    score+=1;
+            //}
+            if (q3 && q3.value == 'ReactNative' || q3.value == 'Flutter' || q3.value == 'Xamarin' || q3.value == 'Swift' || q3.value == 'Kotlin' || q3.value == 'Java2') {
+                score += 1;
+            }
+            //q3.forEach(answer => {
+            //    if (answer.value == 'ReactNative' && answer.value == 'Flutter' && answer.value == 'Xamarin' && answer.value == 'Swift' && answer.value == 'Kotlin' && answer.value == 'Java2') {
+            //        score+=1;
+            //    }
+            //});
+            //вывод
+
+            results.innerHTML = ` <h2>Результаты</h2><p>Правильных ответов: ${score+ss} из 4</p>`;
+        });
+    </script>
+
+
+    <!--<script>
+        function switchTests(current, next) {
+            // Получить элементы
+            const Vvod = document.querySelector(`.vvod`);
+            const currentElement = document.querySelector(`.voprosik${current}`);
+            const nextElement = document.querySelector(`.voprosik${next}`);
+            //const resultElement = document.querySelector(".result");
+            Vvod.classList.add("hidden")
+            currentElement.classList.remove("active");
+            currentElement.classList.add("hidden");
+
+            nextElement.classList.remove("hidden");
+            nextElement.classList.add("active");
+
+            // Проверка, если это последний вопрос, то показываем результат
+            //if (next === 7) {
+            //    resultElement.classList.remove("hidden");
+            //    resultElement.classList.add("active");
+            //}
+        }
+
+    </script>-->
+
 </body>
 </html>
 
