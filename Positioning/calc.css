@@ -1,0 +1,36 @@
+﻿body
+{
+}
+.main_window{
+    background:silver;
+    border:1px solid;
+    width:400px;
+    height:300px;
+
+    position:relative;
+    top:150px;
+    left:35%;
+
+    border-top-left-radius:8px;
+    border-top-right-radius:8px;
+}
+.title_bar {
+    /*строка загаловка*/
+    background-color:crimson;
+    width: 400px;
+    height: 31px;
+    font-family: Tahoma;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.title_bar_left_side,.title_bar_right_side{
+    display:flex;
+    align-items:center;
+}
+.window_control_buttons {
+
+}
