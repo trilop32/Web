@@ -11,11 +11,67 @@
         <div class="title_bar">
             <div class="title_bar_left_side"><img src="img/calc.ico" class="app_icon"> Калькулятор</div>
             <div class="title_bar_right_side">
-                <input type="image" src="img/button1.ico" >
-                <input type="image" src="img/button2.ico" >
-                <input type="image" src="img/button3.ico" >
+                <input type="image" src="img/button1.ico">
+                <input type="image" src="img/button2.ico">
+                <input type="image" src="img/button3.ico">
             </div>
         </div>
+        <div class="calculator-display" id="display"></div>
+        <div class="calculator-buttons">
+            <button class="operator-button calculator-button" onclick="appendOperator('+')">+</button>
+            <button class="operator-button calculator-button"></button>
+            <button class="operator-button calculator-button" onclick="appendOperator('c')">C</button>
+            <button class="operator-button calculator-button" onclick="appendOperator('<')"><</button>
+
+            <button class="calculator-button" onclick="appendNumber('7')">7</button>
+            <button class="calculator-button" onclick="appendNumber('8')">8</button>
+            <button class="calculator-button" onclick="appendNumber('9')">9</button>
+            <button class="operator-button calculator-button" onclick="appendOperator('/')">/</button>
+
+            <button class="calculator-button" onclick="appendNumber('4')">4</button>
+            <button class="calculator-button" onclick="appendNumber('5')">5</button>
+            <button class="calculator-button" onclick="appendNumber('6')">6</button>
+            <button class="operator-button calculator-button" onclick="appendOperator('*')">X</button>
+
+            <button class="calculator-button" onclick="appendNumber('1')">1</button>
+            <button class="calculator-button" onclick="appendNumber('2')">2</button>
+            <button class="calculator-button" onclick="appendNumber('3')">3</button>
+            <button class="operator-button calculator-button" onclick="appendOperator('-')">-</button>
+
+            <button class="calculator-button"></button>
+            <button class="calculator-button">0</button>
+            <button class="calculator-button"></button>
+            <button class="operator-buttons calculator-button" onclick="appendOperator('=')">=</button>
+        </div>
     </div>
+    <script>
+        let display = document.getElementById("display");
+        let currentInput = "";
+
+        function appendNumber(number) {
+            currentInput += number;
+            display.textContent = currentInput;
+        }
+
+        function appendOperator(operator) {
+            if (operator === '=') {
+                try {
+                    currentInput = eval(currentInput).toString();
+                    display.textContent = currentInput;
+                } catch (error) {
+                    display.textContent = "????";
+                }
+            } else if (operator === 'c') {
+                currentInput = "";
+                display.textContent = currentInput;
+            } else if (operator === '<') {
+                currentInput = currentInput.slice(0, -1);
+                display.textContent = currentInput;
+            } else {
+                currentInput += operator;
+                display.textContent = currentInput;
+            }
+        }
+    </script>
 </body>
 </html>

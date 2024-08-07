@@ -1,11 +1,12 @@
 ﻿body
 {
+    background-color:black;
 }
 .main_window{
     background:silver;
     border:1px solid;
     width:400px;
-    height:300px;
+    height:360px;
 
     position:relative;
     top:150px;
@@ -31,6 +32,29 @@
     display:flex;
     align-items:center;
 }
-.window_control_buttons {
-
+.calculator-display {
+    background-color: #fff;
+    height: 40px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: right;
+    margin-top: 10px;
+}
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+.calculator-button {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+.operator-button{
+    background-color:silver
+}
+.operator-buttons{
+    background-color:green
 }
